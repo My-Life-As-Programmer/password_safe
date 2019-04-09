@@ -1,0 +1,37 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+<span class="flow-text"> <h3 > Server Details </h3> </span>
+
+<table class="striped responsive-table"> <!--  centered highlight striped responsive-table -->
+
+        <!-- <thead>
+          <tr>
+              <th>Server Details</th>
+          </tr>
+        </thead> -->
+
+        <tbody>
+
+          <tr>
+              <td><b>Host Name : </b></td>
+              <td>{{serv.hostname}}</td>
+          </tr>
+          <tr>
+              <td><b>Password : </b></td>
+              <td>{{serv.password}}</td>
+          </tr>
+          <tr>
+              <td><b>Last Password : </b></td>
+              <td>{{serv.last_password}}</td>
+          </tr>
+          <tr>
+              <td><b>Password Modified Date : </b></td>
+              <td>{{serv.last_password_modified}}</td>
+          </tr>
+
+        </tbody>
+
+    </table>
+
+{% endblock %}

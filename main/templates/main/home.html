@@ -1,0 +1,36 @@
+{% extends "main/header.html" %}
+{% block content %}
+<span class="flow-text"> <h2 > List of Servers</h2> </span>
+    <table class="highlight responsive-table"> <!--  centered highlight striped responsive-table -->
+
+        <thead>
+          <tr>
+              <th>Server</th>
+              <th>IP Address</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {% for s in serv  %}
+          <tr>
+              <td>{{s.hostname}}</td>
+              <td><a href="/server_details/{{s.hostname}}">{{s.ip}}</a></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+{% endblock %}
+
+
+<!-- my old code
+
+
+    <table>
+        {% for s in serv  %}
+        <tr><td>{{s.hostname}}</td>  <td>{{s.ip}}</td></tr>
+        {% endfor %}
+
+    </table>
+-->

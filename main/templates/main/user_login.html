@@ -1,0 +1,16 @@
+{% extends "main/header.html" %}
+{% block content %}
+
+   <div class="container">
+        <br>
+        <span class="flow-text"> Login to acces the Content</span>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn" type="submit"> Login </button>
+        </form>
+       <br>
+        <p>Please contact your Administrator for Login details</p>
+   </div>
+
+{% endblock %}
