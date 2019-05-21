@@ -1,0 +1,28 @@
+{% extends "main/header.html" %}
+{% block content %}
+<span class="flow-text"> <h4 > Logs</h4> </span>
+    <table class="highlight"> <!--  centered highlight striped responsive-table -->
+        <thead>
+          <tr>
+              <th>User</th>
+              <th>Server Accessesd</th>
+              <th>Time</th>
+              <th>Reason</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {% for log in logs  %}
+          <tr>
+              <!-- <td> {{log.user_accessed}} --  has accessed  ! {{log.serv_name}} ! on  -{{log.time_of_access}}-  for the Reason: {{log.reason}}</td> -->
+              <td> {{log.user_accessed}} </td>
+              <td>{{log.serv_name}}</td>
+              <td>{{log.time_of_access}}</td>
+              <td>{{log.reason}}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+
+{% endblock %}

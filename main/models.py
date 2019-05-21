@@ -23,3 +23,11 @@ class ServerDetails(models.Model):
     class Meta:
         verbose_name_plural ='ServerDetails'
 
+class Logs(models.Model):
+    serv_name = models.CharField(max_length=50)
+    user_accessed = models.CharField(max_length=50)
+    time_of_access = models.DateTimeField(default=timezone.now)
+    reason = models.CharField(max_length=50)
+
+    class Meta:
+        verbose_name_plural ='ServerDetails'

@@ -1,0 +1,15 @@
+{% extends "main/header.html" %}
+{% block content %}
+
+<form class=""  method="post">
+    {% csrf_token %}
+
+    <label for="serv_inp" class="flow-text">Server Hostname:</label> <input type="text" name="serv_inp" value=""  required/>
+
+    <label for="comment" class="flow-text">Reason:</label> <input type="text" name="comment" value="" required/>
+
+    <button type="submit" name="button" class="btn"> Search </button>
+
+</form>
+
+{% endblock content %}

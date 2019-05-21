@@ -1,15 +1,25 @@
 <nav>
     <div class="nav-wrapper">
-      <a href="/" class="brand-logo center" >  EMEA </a>
+      <a href="/" class="brand-logo center" >  P_BOX </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/">Home</a></li>
-        {% if user.is_authenticated %}
-            <!-- <li><a href="/account">{{user.username|title}}</a></li> -->
-            <li><a href="/logout">Logout</a></li>
-        {% else %}
-            <!-- <li><a href="/register">Register</a></li> -->
-            <li><a href="/login">Login </a></li>
-        {% endif %}
+            {% if user.is_superuser %}
+                <li><a href="/">Home</a></li>
+                <li><a href="{% url 'main:user_home'%}">Search</a></li>
+            {% else %}
+                <li><a href="/">Home</a></li>
+            {% endif %}
+            {% if user.is_superuser %}
+                <!-- <li><a href="/account">{{user.username|title}}</a></li> -->
+                <li><a href="/logs">Logs</a></li>
+            {% endif %}
+            {% if user.is_authenticated %}
+                <!-- <li><a href="/account">{{user.username|title}}</a></li> -->
+                <li><a href="/logout">Logout</a></li>
+            {% else %}
+                <!-- <li><a href="/register">Register</a></li> -->
+                <li><a href="/login">Login </a></li>
+            {% endif %}
+
       </ul>
     </div>
  </nav>
