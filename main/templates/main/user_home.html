@@ -1,15 +1,22 @@
 {% extends "main/header.html" %}
 {% block content %}
 
-<form class=""  method="post">
-    {% csrf_token %}
+<div class="">
+    <h4 class="flow-text"> Welcome to the P_BOX , Please provide Server Hostname and Reason <h4>
+    <form class=""  method="post">
+        {% csrf_token %}
 
-    <label for="serv_inp" class="flow-text">Server Hostname:</label> <input type="text" name="serv_inp" value=""  required/>
+        <div class ="section">
+            <label for="serv_inp" class="flow-text">Server Hostname:</label> <input type="text" name="serv_inp" value=""  required/>
+        </div>
+        <div class ="section">
+            <label for="comment" class="flow-text">Reason:</label> <input type="text" name="comment" value="" required/>
+        </div>
+        <div class ="section">
+            <button type="submit" name="button" class="btn waves-effect waves-light"> Search </button>
+        </div>
 
-    <label for="comment" class="flow-text">Reason:</label> <input type="text" name="comment" value="" required/>
+    </form>
 
-    <button type="submit" name="button" class="btn"> Search </button>
-
-</form>
-
+</div>
 {% endblock content %}
